@@ -36,6 +36,19 @@ console.log(movieByRating());
 
 function findByTitle( title ){
   //add code
+  document.getElementById("demo").innerHTML = movieList.title;
+  return movieList.title;
+}
+function findByTitle( title ){
+  var found = [];
+     var f = 0;
+  for (var i = 0; i < movieList.length; i++){
+          if (movieList[i].title.search(title) != -1){
+               found[f] = movieList[i];
+               f++;
+      }
+    }
+    return JSON.stringify(found);
 }
 
-console.log(findByTitle("matrix"));
+console.log(findByTitle("Matrix"));
